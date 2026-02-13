@@ -12,22 +12,43 @@ export default function Home() {
   ];
   const projects = [
     {
-      title: "Growth Campaign F&B Lokal",
-      description:
-        "Menyusun strategi konten dan optimasi jam posting berbasis insight audience, mendorong engagement rate naik 68% dalam 8 minggu.",
-      stack: "Instagram Insights, TikTok Analytics, Notion",
+      title: "Case Study: Instagram UMKM F&B",
+      scenario: "Simulasi 30 hari, target 0-1000 followers, 3 format konten diuji.",
+      problem: "Engagement rate awal rendah, di 0.8% dengan save minim.",
+      strategy:
+        "Content pillar 3 kategori, hook optimization, CTA komentar, dan automation DM trigger (simulasi ManyChat).",
+      result: [
+        "ER naik dari 0.8% -> 3.2%",
+        "Rata-rata save naik 240%",
+        "18 DM masuk dari auto-trigger",
+      ],
+      stack: "Instagram Insights, ManyChat, Notion",
     },
     {
-      title: "DM Automation Beauty Brand",
-      description:
-        "Membangun alur automasi DM untuk campaign launching produk agar respon lebih cepat dan lead masuk lebih terstruktur.",
-      stack: "ManyChat, Meta API, Google Sheets",
+      title: "Case Study: Personal Brand Edukasi",
+      scenario: "Eksperimen konten short-form untuk niche edukasi produktivitas.",
+      problem: "View stagnan di bawah 300 dan retensi awal rendah.",
+      strategy:
+        "Storytelling 30 detik, pattern interrupt 3 detik pertama, dan distribusi cross-post ke TikTok.",
+      result: [
+        "1 video tembus 12K views",
+        "Average watch time naik 62%",
+        "4 video masuk FYP niche",
+      ],
+      stack: "Instagram Reels, TikTok, CapCut",
     },
     {
-      title: "Social Media Intelligence Report",
-      description:
-        "Membuat dashboard performa bulanan dengan rekomendasi topik konten prioritas berdasarkan data reach, save, share, dan retention.",
-      stack: "Looker Studio, GA4, BigQuery",
+      title: "Case Study: AI + Content Distribution Workflow",
+      scenario: "Perancangan sistem distribusi konten end-to-end untuk tim kecil.",
+      problem: "Proses konten tidak konsisten dan evaluasi performa lambat.",
+      strategy:
+        "Membangun Notion content database, hook library, caption formula, automation publish schedule, dan tracking sheet.",
+      result: [
+        "Waktu produksi konten turun 45%",
+        "Frekuensi publish stabil 5x/minggu",
+        "Laporan performa mingguan selesai < 30 menit",
+      ],
+      stack: "Notion, Make, Google Sheets, Looker Studio",
     },
   ];
   const experiences = [
@@ -216,9 +237,22 @@ export default function Home() {
               style={{ animationDelay: `${180 + index * 100}ms` }}
             >
               <h3 className="text-lg font-semibold text-[#223047]">{project.title}</h3>
+              <p className="mt-3 text-sm font-medium text-[#334155]">{project.scenario}</p>
               <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-                {project.description}
+                <span className="font-semibold text-[#314055]">Masalah:</span>{" "}
+                {project.problem}
               </p>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+                <span className="font-semibold text-[#314055]">Strategi:</span>{" "}
+                {project.strategy}
+              </p>
+              <div className="mt-3 space-y-1 text-sm text-[var(--muted)]">
+                {project.result.map((metric) => (
+                  <p key={metric}>
+                    <span className="font-semibold text-[#314055]">Hasil:</span> {metric}
+                  </p>
+                ))}
+              </div>
               <p className="mt-4 text-xs font-semibold tracking-wide text-[var(--muted-soft)] uppercase">
                 {project.stack}
               </p>
